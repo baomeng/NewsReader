@@ -1,0 +1,68 @@
+
+//
+//  ReactiveCocoDemo.pch
+//  ReactiveCocoDemo
+//
+//  Created by SeegleET on 17/4/10.
+//  Copyright © 2016年 Seegle. All rights reserved.
+//
+
+#ifndef ReactiveCocoDemo_pch
+#define ReactiveCocoDemo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import "UIView+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIImage+ResizeImage.h"
+
+#define     CM_CLIENT_VERSION "V1.1.0.2016.11.07"
+
+#define     HISTORY_PROPERTY_LIST_MAIN       (@"CMHistoryInfo")
+#define     HISTORY_PROPERTY_LIST_EXTEND     (@"plist")
+#define     HISTORY_PROPERTY_LIST_NAME       ([HISTORY_PROPERTY_LIST_MAIN stringByAppendingFormat:@".%@",HISTORY_PROPERTY_LIST_EXTEND])
+
+#define     UPDATE_PROPERTY_LIST_MAIN        (@"CMUpdateInfo")
+#define     UPDATE_PROPERTY_LIST_EXTEND      (@"plist")
+#define     UPDATE_PROPERTY_LIST_NAME        ([UPDATE_PROPERTY_LIST_MAIN stringByAppendingFormat:@".%@",UPDATE_PROPERTY_LIST_EXTEND])
+
+#define     KEY_HISTORY_ACCOUNT              (@"Account")
+#define     KEY_HISTORY_PASSWORD             (@"Password")
+#define     KEY_HISTORY_REMEMBER_PASSWORD    (@"RememberPassword")
+#define     KEY_HISTORY_AUTO_LOGIN           (@"AutoLogin")
+#define     KEY_HISTORY_SERVER_IP            (@"ServerIP")
+#define     KEY_HISTORY_SERVER_PORT          (@"ServerPort")
+#define     DEFAULT_SERVER_PORT               6699
+
+typedef enum {
+    CM_DVT_SALE,							//商铺保、宝宝E眼通、云智能监控、幼园宝、富士康定制的默认ip 0
+    CM_DVT_SHANDONG,
+    CM_DVT_WUXI,							//无锡不做
+    CM_DVT_SHANGHAI,
+    CM_DVT_EWT,						//天翼看宝,中国电信全球眼 4
+    CM_DVT_ZTY,                       //5
+    CM_DVT_REMOTE_EYE,						//
+    CM_DVT_SALE_OLD,							//除CM_DVT_SALE外的无定制的默认ip
+    CM_DVT_EBAISHI,                         //8
+    CM_DVT_ASIA_TEK,
+    CM_DVT_CLOUND_VIEW,							//云视讯
+    CM_DVT_CHINATEL_CLOUND,                  //中国电信云监控11
+    CM_DVT_GXJG ,                            //广西建工
+    CM_DVT_XYJK,                              //校园监控
+    CM_DVT_DIANSHIJIE,
+    CM_DVT_ONLYBABY,
+}CM_DEALER_VERSION_TYPE;
+static const NSString *updateInfoPrefix=@"itms-services://?action=download-manifest&url=";
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+// RGB颜色
+#define SelfColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define RandomColor SelfColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+
+#endif /* ReactiveCocoDemo_pch */
